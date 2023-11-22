@@ -24,6 +24,12 @@ export default {
         insent: "inset 0 -30px 5px -30px rgba(255, 255, 255, 0.55)",
         "insent-lg": "inset 0 -30px 5px -30px rgba(150, 159, 168, 0.55)",
       },
+      backgroundImage: {
+        "custom-gradient": "linear-gradient(to right, #ff1089, #76003c)",
+      },
+      backgroundPosition: {
+        "custom-pos": "-100% 0",
+      },
     },
   },
   plugins: [],

@@ -1,29 +1,55 @@
+import { Link } from "react-router-dom";
 import img from "../assets/images/familia-joven-feliz-uniendo-juntos-casa.webp";
 import Form from "../components/Form";
+import TreatmentCard from "../components/TreatmentCard";
+import { COMPANY_NAME } from "../constants/companyInfo";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 const Home = () => {
+  const FORM = [
+    {
+      id: 1,
+      name: "name",
+      placeholder: "Nombre",
+      type: "name",
+    },
+    {
+      id: 2,
+      name: "phone",
+      placeholder: "Teléfono",
+      type: "tel",
+    },
+    {
+      id: 3,
+      name: "email",
+      placeholder: "Correo electrónico",
+      type: "email",
+    },
+  ];
   return (
     <>
       <section>
-        <div className="container-img-100">
+        <div className="max-[1154px]:mt-8 max-[830px]:mt-16">
           <img
-            className="w-full"
+            className="w-full max-h-screen object-cover"
             src={img}
             alt="familia-joven-feliz-uniendo-juntos-casa"
           />
         </div>
       </section>
       <section>
-        <div className="container-index-h2">
-          <div className="container-index">
-            <div className="container-index__text">
-              <p>Bienvenido a Somriures Dental</p>
-              <h1 className="h-ms">Tu centro de salud bucodental</h1>
+        <div className="bg-[var(--background-color)]">
+          <div className="flex relative py-0 px-32  max-[1154px]:px-6 max-[830px]:flex-col">
+            <div className="w-1/2 py-8 px-12 max-[1154px]:px-0 max-[830px]:w-full">
+              <p>Bienvenido a {COMPANY_NAME}</p>
+              <h1 className="max-[320px]:text-[1.3em]">
+                Tu centro de salud bucodental
+              </h1>
               <p>
-                En Somriures dental, todo nuestro equipo de profesionales
-                quieren transmitir su visión de lo mejor de la odontología
-                moderna, desde un punto de vista teórico-práctico,
-                instalaciones, así como en el empleo de materiales.
+                En {COMPANY_NAME}, todo nuestro equipo de profesionales quieren
+                transmitir su visión de lo mejor de la odontología moderna,
+                desde un punto de vista teórico-práctico, instalaciones, así
+                como en el empleo de materiales.
                 <br />
                 <br />
                 Queremos liderar la incorporación de las últimas técnicas en el
@@ -36,126 +62,32 @@ const Home = () => {
                 ¡¡Ven a conocernos porque no te vamos a decepcionar!!
               </p>
             </div>
-            <div className="container-contact">
-              <div className="contact-form__title">
-                <p>Reserva tu cita!</p>
+            <div className=" w-[45%] absolute -top-[6.5625rem] pr-28 right-0 max-[1154px]:pr-8 max-[830px]:mt-4 max-[830px]:p-0 max-[830px]:w-full max-[830px]:static">
+              <div className="h-[10rem] bg-[var(--color-primary)]">
+                <p className="text-[2em] text-white h-full text-start flex justify-center items-center">
+                  Reserva tu cita!
+                </p>
               </div>
-
-              <Form />
+              <Form form={FORM} />
             </div>
           </div>
-          <div className="index-h2">
-            <h2 className="h-ms">Nuestras Especialidades</h2>
+          <div className="mt-72 max-[1154px]:mt-64 max-[1154px]:bg-[var(--card-background-color)] max-[830px]:mt-0">
+            <h2 className="max-[320px]:text-[1.3em]">
+              Nuestras Especialidades
+            </h2>
           </div>
         </div>
       </section>
       <section>
-        <div className="container-treatments">
-          <div className="container-treatments__cards">
-            <div className="container-treatments__cards__card">
-              <div className="container-treatments__cards__card__img">
-                <a href="./pages/ortodoncia.html">
-                  <img
-                    src="./assets/svg/brackets-blanco.svg"
-                    alt="diente-con-brackets"
-                  />
-                </a>
-              </div>
-              <div className="container-treatments__cards__card__treatments">
-                <a href="./pages/ortodoncia.html">Ortodoncia</a>
-              </div>
-              <div className="container-treatments__cards__card__info">
-                <a href="./pages/ortodoncia.html">Más información</a>
-              </div>
-            </div>
-            <div className="container-treatments__cards__card">
-              <div className="container-treatments__cards__card__img">
-                <a href="./pages/cirugia.html">
-                  <img
-                    src="./assets/svg/extraction_4650148.svg"
-                    alt="bisturi-cirugia"
-                  />
-                </a>
-              </div>
-              <div className="container-treatments__cards__card__treatments">
-                <a href="./pages/cirugia.html">Cirugía</a>
-              </div>
-              <div className="container-treatments__cards__card__info">
-                <a href="./pages/cirugia.html">Más información</a>
-              </div>
-            </div>
-            <div className="container-treatments__cards__card">
-              <div className="container-treatments__cards__card__img">
-                <a href="./pages/implantes.html">
-                  <img
-                    src="./assets/svg/implant_1386815.svg"
-                    alt="implante-dental"
-                  />
-                </a>
-              </div>
-              <div className="container-treatments__cards__card__treatments">
-                <a href="./pages/implantes.html">Implantología</a>
-              </div>
-              <div className="container-treatments__cards__card__info">
-                <a href="./pages/implantes.html">Más información</a>
-              </div>
-            </div>
-            <div className="container-treatments__cards__card">
-              <div className="container-treatments__cards__card__img">
-                <a href="./pages/endodoncia.html">
-                  <img
-                    src="./assets/svg/root-canal_5997489.svg"
-                    alt="diente-con-brackets"
-                  />
-                </a>
-              </div>
-              <div className="container-treatments__cards__card__treatments">
-                <a href="./pages/endodoncia.html">Endodoncia</a>
-              </div>
-              <div className="container-treatments__cards__card__info">
-                <a href="./pages/endodoncia.html">Más información</a>
-              </div>
-            </div>
-            <div className="container-treatments__cards__card">
-              <div className="container-treatments__cards__card__img">
-                <a href="./pages/odontopediatria.html">
-                  <img
-                    src="./assets/svg/dentist_10503563.svg"
-                    alt="diente-con-brackets"
-                  />
-                </a>
-              </div>
-              <div className="container-treatments__cards__card__treatments">
-                <a href="./pages/odontopediatria.html">Odonto-pediatría</a>
-              </div>
-              <div className="container-treatments__cards__card__info">
-                <a href="./pages/odontopediatria.html">Más información</a>
-              </div>
-            </div>
-            <div className="container-treatments__cards__card">
-              <div className="container-treatments__cards__card__img">
-                <a href="./pages/protesis.html">
-                  <img
-                    src="./assets/svg/disinfection_7336148.svg"
-                    alt="diente-con-brackets"
-                  />
-                </a>
-              </div>
-              <div className="container-treatments__cards__card__treatments">
-                <a href="./pages/protesis.html">Prótesis dental</a>
-              </div>
-              <div className="container-treatments__cards__card__info">
-                <a href="./pages/protesis.html">Más información</a>
-              </div>
-            </div>
-          </div>
-          <a
-            href="./pages/tratamientos.html"
-            className="container-treatments__a"
+        <div className=" bg-[var(--card-background-color)] h-[25rem] px-64 max-[1154px]:px-8 max-[830px]:px-4">
+          <TreatmentCard />
+          <Link
+            href="./pages/tratamientos"
+            className=" mt-16 text-center text-[var(--color-secundary)] flex items-center justify-center"
           >
             Más especialidades
-            <i className="fas fa-arrow-circle-right"></i>
-          </a>
+            <FaRegArrowAltCircleRight />
+          </Link>
         </div>
       </section>
       <section className="philosophy">

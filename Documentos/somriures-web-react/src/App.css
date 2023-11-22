@@ -14,12 +14,18 @@
   --card-box-shadow-2: rgba(0, 0, 0, 0.1);
   --card-box-shadow-2-y: 8px;
   --card-box-shadow-2-blur: 15px;
+  --color-primary:#00b2f3;
+  --color-secundary:#ff1089;
+  --bg-3: #0194c9;
+  --bg-4: #353535;
+  --txt-1: #969fa8;
+  --txt-2: #565656;
 }
 
 :root.light {
   --text-color: #52525b;
   --text-color-hover: #222225;
-  --background-color: #faf6f6;
+  --background-color: #f4f7f7;
   --card-background-color: #ffffff;
   --card-border-color: rgba(24, 24, 27, 0.08);
   --card-box-shadow-1: rgba(24, 24, 27, 0.02);

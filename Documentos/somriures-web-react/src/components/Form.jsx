@@ -1,62 +1,51 @@
-const Form = () => {
+import PropTypes from "prop-types";
+import Button from "./Button";
+import { Link } from "react-router-dom";
+
+const Form = ({ form }) => {
   return (
-    <div className="w-50 align-items-center wc contact-form bg-[var(--card-background-color)] p-12">
+    <div className="items-center bg-[var(--card-background-color)] p-12">
       <form>
-        <div className="field row justify-content-center">
-          <div className="col-md-12 col-lg-6 fp">
-            <input
-              className="w-100"
-              required
-              name="name"
-              type="name"
-              placeholder="Nombre"
-              autoComplete="name"
-            />
-          </div>
-          <div className="col-md-12 col-lg-6 fp">
-            <input
-              className="w-100"
-              required
-              name="phone"
-              type="tel"
-              placeholder="Teléfono"
-              autoComplete="tel"
-            />
-          </div>
-          <div className="col-12 fp">
-            <input
-              className="w-100"
-              required
-              name="email"
-              type="email"
-              placeholder="Correo electrónico"
-              autoComplete="email"
-            />
-          </div>
-          <div className="col-12 fp">
-            <textarea
-              className="w-100"
-              id="message"
-              placeholder="Escribe aquí tu consulta"
-              name="mensaje"
-              cols="30"
-              rows="10"
-            ></textarea>
-          </div>
+        <div className="field ">
+          {form.map((item) => (
+            <div key={item.id}>
+              <input
+                className="w-full bg-[var(--background-color)] py-6 px-6 mb-12 font-medium"
+                required
+                name={item.name}
+                type={item.type}
+                placeholder={item.placeholder}
+                autoComplete={item.name}
+              />
+            </div>
+          ))}
+          <textarea
+            className="w-full bg-[var(--background-color)] py-6 px-6 font-medium resize-none"
+            id="message"
+            placeholder="Escribe aquí tu consulta"
+            name="mensaje"
+            cols="20"
+            rows="5"
+          ></textarea>
         </div>
-        <div className="w-100 mt-2 d-flex">
-          <input required type="checkbox" />
-          <a className="pl-1" href="./privacidad.html">
+        <div className="mt-4">
+          <input required className="max-[475px]:w-[0.7rem]" type="checkbox" />
+          <Link
+            className="pl-1 text-[var(--color-primary)] max-[475px]:text-[var(0.7em)]"
+            to="/privacidad"
+          >
             Acepto las condiciones de privacidad.
-          </a>
+          </Link>
         </div>
-        <div className="send">
-          <button id="button" type="submit" value="Enviar">
-            Enviar
-          </button>
+        <div className="mt-4">
+          <Button />
         </div>
       </form>
     </div>
   );
+};
+
+Form.propTypes = {
+  form: PropTypes.array.isRequired,
 };
 export default Form;
