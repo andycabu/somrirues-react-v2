@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import logo2 from "../assets/images/logo2.svg";
-
+import logo from "../assets/images/logo.svg";
+import DayNight from "./DayNight";
+import Lenguage from "./Language";
 import {
   FaAngleDown,
-  FaClock,
   FaBars,
   // faInstagramSquare,
   // faFacebookSquare,
@@ -14,6 +15,7 @@ import { MdClose } from "react-icons/md";
 
 import DropDown from "./DropDown";
 import { Link } from "react-router-dom";
+import { useTheme } from "../hooks/useTheme";
 
 // const ICONS = [
 //   {
@@ -74,33 +76,38 @@ const NAVBAR = [
 function Navbar() {
   const [active, setActive] = useState(false);
   const [scrolling, setScrolling] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
-        // Cambia 100 por la posición en la que quieres que se aplique la clase
         setScrolling(true);
       } else {
         setScrolling(false);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
-
-    // Limpia el listener cuando el componente se desmonta
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <nav className={`nav-personalized ${scrolling ? "sticky" : ""}`}>
-      <div className="logo">
+    <nav
+      className={`nav-personalized z-50 max-w-[93.75rem] fixed top-0 min-w-[100vw] flex justify-between items-center bg-[var(--card-background-color)] p-4 transition-all duration-500 box-shadow-1 ${
+        scrolling ? "sticky" : ""
+      }`}
+    >
+      <div className="flex items-center">
         <Link to="/">
-          <img src={logo2} className="w-64" alt="Logo-Clinica-dental" />
+          <img
+            src={theme === "dark" ? logo : logo2}
+            className="w-[15.5rem]"
+            alt="Logo-Clinica-dental"
+          />
         </Link>
       </div>
-      <div className="navegation ">
+      <div className="navegation flex transition-line duration-500 justify-end items-center w-4/5 pr-4 gap-4 text-right ">
         <ul
           className={`menu relative flex gap-20 transition-right max-[830px]:min-w-[100vw] ${
             active ? "active" : ""
@@ -125,9 +132,9 @@ function Navbar() {
           ))}
           {/* <Icons icons={ICONS} /> */}
         </ul>
-        <div className="schedule">
-          <FaClock />
-          <p>10 a 14 y 16 a 20</p>
+        <div className="absolute flex  top-0 max-[1154px]:hidden right-7 pt-1">
+          <Lenguage />
+          <DayNight />
         </div>
       </div>
       <FaBars onClick={() => setActive(!active)} className="menu-btn" />
