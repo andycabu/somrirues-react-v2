@@ -2,9 +2,12 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 const IconCard = ({ img, alt, link }) => {
   return (
-    <div className="container-treatments__cards__card__img">
-      <Link to={`/pages${link}`}>
-        <img src={img} alt={alt} />
+    <div className="-top-6 absolute flex justify-center items-center">
+      <Link
+        className=" bg-[var(--color-primary)] rounded-[13.1875rem]"
+        to={`/pages${link}`}
+      >
+        <img className=" p-6 h-[7.875rem]" src={img} alt={alt} />
       </Link>
     </div>
   );

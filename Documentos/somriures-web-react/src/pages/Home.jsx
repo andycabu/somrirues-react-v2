@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import img from "../assets/images/familia-joven-feliz-uniendo-juntos-casa.webp";
+import img2 from "../assets/images/dos-dentistas-sonrientes-mirando-camara-pie-lugar-trabajo-clinica-dental-moderna.webp";
 import Form from "../components/Form";
 import TreatmentCard from "../components/TreatmentCard";
 import { COMPANY_NAME } from "../constants/companyInfo";
-import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import { FaRegArrowAltCircleRight, FaCheckCircle } from "react-icons/fa";
 
 const Home = () => {
   const FORM = [
@@ -24,6 +25,24 @@ const Home = () => {
       name: "email",
       placeholder: "Correo electrónico",
       type: "email",
+    },
+  ];
+  const PHILOSOPHY = [
+    {
+      id: 1,
+      text: "Familiaridad y confianza.",
+    },
+    {
+      id: 2,
+      text: "Trabajo bien hecho.",
+    },
+    {
+      id: 3,
+      text: "Dar lo mejor de nosotros.",
+    },
+    {
+      id: 4,
+      text: "Excelencia e innovación.",
     },
   ];
   return (
@@ -90,18 +109,20 @@ const Home = () => {
           </Link>
         </div>
       </section>
-      <section className="philosophy">
-        <div className="container-philosophy">
-          <div className="container-philosophy__1">
+      <section className=" bg-[var(--background-color)] pt-40">
+        <div className="flex mt-40 max-[1154px]:mt-[30rem] max-[830px]:flex-col max-[830px]:mt-[75rem]">
+          <div className="w-[60%] h-full flex flex-col justify-center pl-64 max-[1154px]:pl-8 max-[830px]:w-full max-[830px]:px-4">
             <p>¿Cual es nuestra filosofia?</p>
-            <ul>
-              <li>Familiaridad y confianza.</li>
-              <li>Trabajo bien hecho.</li>
-              <li>Dar lo mejor de nosotros.</li>
-              <li>Excelencia e innovación.</li>
+            <ul className="text-[1.3125em] p-12 max-[425px]:pt-4 max-[425px]:pl-4">
+              {PHILOSOPHY.map((item) => (
+                <li className="list-disc" key={item.id}>
+                  {item.text}
+                </li>
+              ))}
             </ul>
             <img
-              src="./assets/images/dos-dentistas-sonrientes-mirando-camara-pie-lugar-trabajo-clinica-dental-moderna.webp"
+              className="pr-24 object-cover max-[830px]:p-0"
+              src={img2}
               alt="dos-dentistas-sonrientes-mirando-camara-pie-lugar-trabajo-clinica-dental-moderna"
             />
           </div>
