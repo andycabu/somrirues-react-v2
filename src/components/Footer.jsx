@@ -1,17 +1,17 @@
 function Footer() {
   return (
     <footer>
-      <div class="footer">
-        <div class="footer__details">
-          <div class="align-self-center">
+      <div className="footer">
+        <div className="footer__details">
+          <div className="align-self-center">
             <img
-              class="footer__details__img"
+              className="footer__details__img"
               src="./assets/images/logo.svg"
               alt="logo-empresa"
             />
           </div>
           <div>
-            <ul class="footer__details__ul">
+            <ul className="footer__details__ul">
               <li>Dirección del centro</li>
               <li>
                 <a href="prueba@prueba.com">prueba@prueba.com</a>
@@ -22,19 +22,19 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div class="footer__icons">
+        <div className="footer__icons">
           <a target="_blank" href="https://www.instagram.com">
-            <i id="zoom" class="fab fa-instagram-square transition"></i>
+            <i id="zoom" className="fab fa-instagram-square transition"></i>
           </a>
           <a target="_blank" href="https://www.facebook.com">
-            <i id="zoom" class="fab fa-facebook-square transition"></i>
+            <i id="zoom" className="fab fa-facebook-square transition"></i>
           </a>
           <a target="_blank" href="LinkPrueba">
-            <i id="zoom" class="fab fa-whatsapp-square transition"></i>
+            <i id="zoom" className="fab fa-whatsapp-square transition"></i>
           </a>
         </div>
       </div>
-      <div class="footer__copy">
+      <div className="footer__copy">
         <p>Empresa, Copyright ©2023,Todos los derechos reservados.</p>
       </div>
     </footer>

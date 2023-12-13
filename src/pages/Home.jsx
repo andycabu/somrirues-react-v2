@@ -6,6 +6,7 @@ import TreatmentCard from "../components/TreatmentCard";
 import { COMPANY_NAME } from "../constants/companyInfo";
 import { FaRegArrowAltCircleRight, FaCheckCircle } from "react-icons/fa";
 import Mutuals from "../components/Mutuals";
+import Information from "../components/Information";
 
 const Home = () => {
   const FORM = [
@@ -131,13 +132,12 @@ const Home = () => {
       <section>
         <div className=" bg-[var(--card-background-color)] h-[25rem] px-64 max-[1154px]:px-8 max-[830px]:px-4">
           <TreatmentCard />
-          <Link
-            href="./pages/tratamientos"
-            className=" mt-16 text-center text-[var(--color-secundary)] flex items-center justify-center"
-          >
-            Más especialidades
-            <FaRegArrowAltCircleRight />
-          </Link>
+          <div className="mt-16 text-center text-[var(--color-secundary)] flex items-center justify-center">
+            <Link to="./pages/tratamientos">
+              Más especialidades
+              <FaRegArrowAltCircleRight className="ml-2 inline-block" />
+            </Link>
+          </div>
         </div>
       </section>
       <section className=" bg-[var(--background-color)] pt-40">
@@ -173,26 +173,24 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div className="container-mutuas">
-          <h2>Nuestras Mútuas</h2>
-          <Mutuals />
-          <Link
-            href="./pages/mutuas"
-            className=" mt-16 text-center text-[var(--color-secundary)] flex items-center justify-center"
-          >
+        <h2>Nuestras Mútuas</h2>
+        <Mutuals />
+        <div className="mt-16 text-center text-[var(--color-secundary)] flex items-center justify-center">
+          <Link to="./pages/mutuas">
             Más mutuas
-            <FaRegArrowAltCircleRight />
+            <FaRegArrowAltCircleRight className="ml-2 inline-block" />
           </Link>
         </div>
       </section>
-      <section className="information">
-        <div className="container-information">
+      <section className="bg-[var(--background-color)]">
+        <div className="flex justify-center flex-col items-center text-center max-[1154px]:py-0 max-[1154px]:px-8 max-[830px]:px-4">
           <div className="container-information__text">
             <h2>Estamos aquí para atenderte</h2>
             <p className="container-information__text-p">
               Información de contacto
             </p>
           </div>
+          <Information />
         </div>
       </section>
     </>

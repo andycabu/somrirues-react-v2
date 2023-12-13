@@ -22,6 +22,14 @@ a:hover {
   color: #00b2f3;
 }
 
+.prueba:hover .animacion-prueba img {
+  animation: zoom-fade 0.4s;
+}
+
+.animacion-prueba img {
+  transition: transform 0.3s, opacity 0.3s;
+}
+
 @keyframes zoom-fade {
   0%,
   100% {
@@ -215,11 +223,6 @@ a:hover {
 }
 ::-webkit-scrollbar-track {
   display: none;
-}
-
-main {
-  background-color: #ffff;
-  min-height: 100vh;
 }
 
 h1 {
@@ -592,13 +595,6 @@ h3 {
   }
 }
 
-.container-information {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 .container-information__text-p {
   color: #969fa8;
 }
@@ -706,7 +702,7 @@ a:hover .container-information__logos__logo__a img {
 .container-mutuas__logos {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  justify-content: center;
+  justify-items: center;
   padding: 0 16rem;
 }
 .container-mutuas__logos img {

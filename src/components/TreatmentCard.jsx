@@ -63,7 +63,7 @@ const TreatmentCard = () => {
             <IconCard
               img={treatment.img}
               alt={treatment.alt}
-              link={treatment.link}
+              link={`./pages${treatment.link}`}
             />
             <div className="mt-20 text-[1.125em]">
               <Link to={`./pages${treatment.link}`}>{treatment.title}</Link>
