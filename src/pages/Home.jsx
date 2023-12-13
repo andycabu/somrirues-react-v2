@@ -193,64 +193,6 @@ const Home = () => {
               Información de contacto
             </p>
           </div>
-          <div className="container-information__logos">
-            <a href="https://goo.gl/maps/PP6t3DvSMrKejNzf9">
-              <div className="container-information__logos__logo">
-                <div className="container-information__logos__logo__a">
-                  <img
-                    src="./assets/svg/location-pin_5837790.svg"
-                    alt="logo-ubicacion"
-                  />
-                </div>
-                <div className="container-information__logos__logo__text">
-                  <p>C/ d'Antoni Gaudí 27</p>
-                  <p>08850 Gavà (BCN)</p>
-                </div>
-              </div>
-            </a>
-            <a href="tel:936384298">
-              <div className="container-information__logos__logo">
-                <div className="container-information__logos__logo__a">
-                  <img
-                    src="./assets/svg/telephone-call_159052.svg"
-                    alt="logo-telefono"
-                  />
-                </div>
-                <div className="container-information__logos__logo__text">
-                  <p>936 384 298</p>
-                  <p>627 149 677</p>
-                </div>
-              </div>
-            </a>
-            <a href="mailto:hola@somriuresdental.com">
-              <div className="container-information__logos__logo">
-                <div className="container-information__logos__logo__a">
-                  <img
-                    src="./assets/svg/messages-silhouette_20173.svg"
-                    alt="diente-con-brackets"
-                  />
-                </div>
-                <div className="container-information__logos__logo__text">
-                  <p>hola@somriuresdental.com</p>
-                  <p className="bg-transparent">prueba</p>
-                </div>
-              </div>
-            </a>
-            <a href="./pages/contacto.html">
-              <div className="container-information__logos__logo">
-                <div className="container-information__logos__logo__a">
-                  <img
-                    src="./assets/svg/time_4121770.svg"
-                    alt="diente-con-brackets"
-                  />
-                </div>
-                <div className="container-information__logos__logo__text">
-                  <p>10:00 a 14:00</p>
-                  <p>16:00 a 20:00</p>
-                </div>
-              </div>
-            </a>
-          </div>
         </div>
       </section>
     </>
