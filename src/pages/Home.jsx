@@ -5,6 +5,7 @@ import Form from "../components/Form";
 import TreatmentCard from "../components/TreatmentCard";
 import { COMPANY_NAME } from "../constants/companyInfo";
 import { FaRegArrowAltCircleRight, FaCheckCircle } from "react-icons/fa";
+import Mutuals from "../components/Mutuals";
 
 const Home = () => {
   const FORM = [
@@ -43,6 +44,36 @@ const Home = () => {
     {
       id: 4,
       text: "Excelencia e innovación.",
+    },
+  ];
+  const PHILOSOPHY2 = [
+    {
+      id: 1,
+      text: "Todas las especialidades, en un único espacio",
+    },
+    {
+      id: 2,
+      text: "Tratamientos multidisciplinares",
+    },
+    {
+      id: 3,
+      text: "Excelencia en los materiales",
+    },
+    {
+      id: 4,
+      text: "Profesionales altamente cualificados",
+    },
+    {
+      id: 5,
+      text: "Estudios personalizados",
+    },
+    {
+      id: 6,
+      text: "Somos los propietarios del centro, no somos franquicia",
+    },
+    {
+      id: 7,
+      text: "Filosofia SLOW",
     },
   ];
   return (
@@ -126,42 +157,16 @@ const Home = () => {
               alt="dos-dentistas-sonrientes-mirando-camara-pie-lugar-trabajo-clinica-dental-moderna"
             />
           </div>
-          <div className="container-philosophy__2">
+          <div className="w-[40%] bg-[var(--color-primary)] flex flex-col justify-center items-center max-[830px]:hidden">
             <div className="container-philosophy__2__text">
               <h3>¿Por qué escogernos?</h3>
               <ul>
-                <li>
-                  <i className="fas fa-check-circle"></i>
-                  Todas las especialidades,
-                  <br />
-                  un único espacio
-                </li>
-                <li>
-                  <i className="fas fa-check-circle"></i>
-                  Tratamientos multidisciplinares
-                </li>
-                <li>
-                  <i className="fas fa-check-circle"></i>
-                  Excelencia en los materiales
-                </li>
-                <li>
-                  <i className="fas fa-check-circle"></i>
-                  Profesionales altamente cualificados
-                </li>
-                <li>
-                  <i className="fas fa-check-circle"></i>
-                  Estudios personalizados
-                </li>
-                <li>
-                  <i className="fas fa-check-circle"></i>
-                  Somos los propietarios del centro,
-                  <br />
-                  no somos franquicia
-                </li>
-                <li>
-                  <i className="fas fa-check-circle"></i>
-                  Filosofia SLOW
-                </li>
+                {PHILOSOPHY2.map((item) => (
+                  <li key={item.id}>
+                    <FaCheckCircle className="inline-block mr-2" />
+                    {item.text}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -170,24 +175,14 @@ const Home = () => {
       <section>
         <div className="container-mutuas">
           <h2>Nuestras Mútuas</h2>
-          <div className="container-mutuas__logos">
-            <div>
-              <img
-                src="./assets/images/axa_logo_solid_rgb.svg"
-                alt="axa-logo"
-              />
-            </div>
-            <div>
-              <img src="./assets/images/cigna.svg" alt="logo-cigna" />
-            </div>
-            <div>
-              <img src="./assets/images/generali.svg" alt="logo-generali" />
-            </div>
-          </div>
-          <a href="./pages/mutuas.html" className="container-mutuas__a">
-            Ver todas las mutuas
-            <i className="fas fa-arrow-circle-right"></i>
-          </a>
+          <Mutuals />
+          <Link
+            href="./pages/mutuas"
+            className=" mt-16 text-center text-[var(--color-secundary)] flex items-center justify-center"
+          >
+            Más mutuas
+            <FaRegArrowAltCircleRight />
+          </Link>
         </div>
       </section>
       <section className="information">
@@ -237,7 +232,7 @@ const Home = () => {
                 </div>
                 <div className="container-information__logos__logo__text">
                   <p>hola@somriuresdental.com</p>
-                  <p className="hiddden">prueba</p>
+                  <p className="bg-transparent">prueba</p>
                 </div>
               </div>
             </a>

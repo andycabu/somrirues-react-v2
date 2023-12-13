@@ -1,7 +1,7 @@
 export function CatalanFlag() {
   return (
     <svg
-      id="svg2"
+      className="h-8"
       viewBox="0 0 1235 650"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -162,7 +162,7 @@ export function CatalanFlag() {
 export function SpainFlag() {
   return (
     <svg
-      id="svg4408"
+      className="h-8"
       viewBox="0 0 1235 650"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -4124,7 +4124,7 @@ export function SpainFlag() {
 export function EnglandFlag() {
   return (
     <svg
-      id="svg5823"
+      className="h-8"
       viewBox="0 0 1235 650"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
